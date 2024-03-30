@@ -1,6 +1,6 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./ui/Home.jsx";
-import Menu, {loader as menuLoader} from "./features/menu/Menu.jsx";
+import Menu from "./features/menu/Menu.jsx";
 import Cart from "./features/cart/Cart.jsx";
 import CreateOrder, {action as createOrder} from "./features/order/create/CreateOrder.jsx";
 import Order,  {loader as orderLoader} from "./features/order/status/Order.jsx";
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: '/menu',
         element: <Menu/>,
-        loader: menuLoader,
+/*        loader: menuLoader,*/ // use AsyncThunk to fetch data once
         errorElement: <Error/>,
       },
       {

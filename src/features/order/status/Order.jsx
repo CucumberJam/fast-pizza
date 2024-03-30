@@ -8,16 +8,24 @@ import PriceOrder from "./widgets/PriceOrder.jsx";
 import {useEffect} from "react";
 import OrderItem from "../OrderItem.jsx";
 import UpdateOrder from "./widgets/UpdateOrder.jsx";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchMenu} from "../../menu/menuSlice.js";
 
 function Order() {
   const order = useLoaderData();
-  console.log(order);
 
-  const fetcher = useFetcher();
+/*  const fetcher = useFetcher();
 
   useEffect(()=> {
     if(!fetcher.data && fetcher.state === 'idle' ) fetcher.load('/menu')
-  }, [fetcher]);
+  }, [fetcher]);*/
+
+  const dispatch = useDispatch();
+  const {pizzas: menu, status: statusMenu} = useSelector(store => store.menu);
+
+  useEffect(()=> {
+    if(menu.length === 0) dispatch(fetchMenu());
+  }, []);
 
   const {
     id,
@@ -41,9 +49,9 @@ function Order() {
         <ItemsOrder>
             {cart.map(pizza => <OrderItem key={pizza.pizzaId}
                                           item={pizza}
-                                          isLoadingIngredients={fetcher.state === 'loading'}
-                                          ingredients={fetcher.data?.find(el =>
-                                              el.id === pizza.pizzaId).ingredients}
+                                          isLoadingIngredients={statusMenu === 'loading'}
+                                          ingredients={menu?.find(el =>
+                                              el.id === pizza.pizzaId)?.ingredients}
             />)}
         </ItemsOrder>
       <PriceOrder priorityPrice={priorityPrice} priority={priority} orderPrice={orderPrice}/>
