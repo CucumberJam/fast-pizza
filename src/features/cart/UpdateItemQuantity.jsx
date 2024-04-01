@@ -7,7 +7,7 @@ export default function UpdateItemQuantity({id, currentQuantity}){
 
 
     return (
-        <div className='flex gap-3 items-center mx-2'>
+        <div className='flex gap-1 md:gap-3 items-center mx-2'>
             <Button type='round'
                     onClick={()=> dispatch(decreaseItemQuantity(id))}>
                 -

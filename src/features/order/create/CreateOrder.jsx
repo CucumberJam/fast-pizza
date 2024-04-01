@@ -44,14 +44,14 @@ function CreateOrder() {
   }
 
   return (
-    <div className='px-4 py-6'>
+    <div className='px-4 pt-6 pb-20 md:py-6'>
       <h2 className='mb-8 text-xl font-semibold'>
         Ready to order? Let's go!
       </h2>
 
       <Form method="POST" action='/order/new'>
         <InputItem defaultName={userName}
-                   labelName='First Name:'
+                   labelName='Name:'
                    inputName='customer'
                    inputType='text'>
             {formErrors?.customer && (

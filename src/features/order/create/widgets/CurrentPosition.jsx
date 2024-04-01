@@ -3,7 +3,7 @@ import Button from "../../../../ui/buttons/Button.jsx";
 
 function  CurrentPosition({isLoading, onCurrAddress}){
     return (
-        <div className='flex justify-end'>
+        <div className='text-sm ms:text-medium flex justify-end mb-5 md:mb-0'>
             <Button type='small'
                     onClick={onCurrAddress}
                     disabled={isLoading}>

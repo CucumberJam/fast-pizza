@@ -41,7 +41,7 @@ function MenuItem({ pizza }) {
   }
 
   return (
-    <li className='mt-2 flex gap-4 py-2 bg-white rounded-lg hover:brightness-90'>
+    <li className='min-w-[279px] mt-2 w-full flex gap-2 py-2 bg-white rounded-lg hover:brightness-90'>
       <img className={`h-44 w-44 object-cover
       ${soldOut ? 'grayscale opacity-70' : ``}`}
           src={`images/${id}.jpg`} alt={name} />
@@ -66,8 +66,8 @@ function MenuItem({ pizza }) {
 
             {isInCart && (
                 <div className='flex flex-col
-                items-center justify-between gap-5
-                md:gap-2 sm:flex-row md:flex-col lg:flex-row'>
+                items-center gap-2 md:gap-5
+                sm:flex-row md:flex-col lg:flex-row'>
                     <UpdateItemQuantity id={id} currentQuantity={currQuantity}/>
                     <DeleteCartItem id={id}/>
                 </div>

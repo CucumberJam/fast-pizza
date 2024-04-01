@@ -21,7 +21,7 @@ function Cart() {
             <LinkButton to="/menu">Back to menu</LinkButton>
             <CartHeader userName={name}/>
             <CartList cart={cart}/>
-            <div className='mt-6 space-x-2'>
+            <div className='flex flex-col gap-5 sm:flex-row md:gap-3 mt-6 space-x-2'>
                 <Button onClick={()=> navigate('/order/new')}
                         to='/order/new'>
                     Order pizzas

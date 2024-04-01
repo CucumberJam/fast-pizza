@@ -15,7 +15,7 @@ function Layout(){
                 <Loader/>
             }
         <main className='overflow-y-auto px-10 bg-amber-50'>
-            <div className='mx-auto h-screen max-w-5xl px-10 bg-white'>
+            <div className='mx-auto min-h-screen max-w-5xl px-10 bg-white'>
                 <Outlet/>
             </div>
         </main>

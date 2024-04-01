@@ -7,7 +7,7 @@ function InputCheck({value, onChangePriority, labelName, inputName, idLabel}){
         'focus:ring-yellow-400 focus:ring-offset-yellow-1';
 
     return (
-        <div className='mb-12 flex items-center gap-3'>
+        <div className='my-5 md:mb-12 flex items-center gap-3'>
             <input className={className}
                    type="checkbox"
                    name={inputName}
